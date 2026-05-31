@@ -17,12 +17,12 @@ public class Semana {
     private Long id_semana;
 
     @Column(name = "numero_semana", nullable = false)
-    private int numero_semana;
+    private int numero;
 
     @Column(name = "mes_semana", nullable = false)
-    private int mes_semana;
+    private int mes;
 
     @Column(name = "ano_semana", nullable = false)
-    private int ano_semana;
+    private int ano;
     
 }

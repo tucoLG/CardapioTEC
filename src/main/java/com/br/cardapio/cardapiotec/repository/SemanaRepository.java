@@ -5,7 +5,13 @@ import org.springframework.stereotype.Repository;
 
 import com.br.cardapio.cardapiotec.model.Semana;
 
+
 @Repository
 public interface SemanaRepository extends JpaRepository<Semana, Long> {
+    Semana findByNumero(int numero);
+    Semana findByMes(String mes);
+    Semana findByAno(int ano);
 
+    boolean existsByNumeroAndMesAndAno(int numero, int mes, int ano);
+    
 }

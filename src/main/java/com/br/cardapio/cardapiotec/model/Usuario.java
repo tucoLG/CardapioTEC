@@ -17,15 +17,15 @@ public class Usuario {
     private Long id_usuario;
 
     @Column(name = "tipo_usuario", nullable = false)
-    private String tipo_usuario;
+    private String tipo;
     
     @Column(name = "nome_usuario", nullable = false)
-    private String nome_usuario;
+    private String nome;
 
     @Column(name = "email_usuario", nullable = false, unique = true)
-    private String email_usuario;
+    private String email;
 
     @Column(name = "senha_usuario", nullable = false, unique = true)
-    private String senha_usuario;
+    private String senha;
 
 }

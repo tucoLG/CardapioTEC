@@ -7,5 +7,9 @@ import com.br.cardapio.cardapiotec.model.Usuario;
 
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
+    Usuario findByEmail(String email);
 
+    Usuario findBySenha(String senha);
+    boolean existsByEmail(String email);
+    boolean existsBySenha(String senha);
 }

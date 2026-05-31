@@ -18,23 +18,23 @@ public class Cardapio {
     private Long id_cardapio;
 
     @Column(name = "numero_semana", nullable = false)
-    private int numero_semana;
+    private int numeroSemana;
 
     @Column(name = "dia_semana", nullable = false)
-    private String dia_semana;
+    private String diaSemana;
     
     @ManyToOne // Relacionamento com a entidade Semana
-    @Column(name = "semana_id", nullable = false)
-    private Semana semana_id;
+    @Column(name = "id_semana", nullable = false)
+    private Semana idSemana;
 
     @Column(name = "cafe_manha", nullable = false)
-    private String cafe_manha;
+    private String cafeManha;
 
     @Column(name = "almoco", nullable = false)
     private String almoco;
 
     @Column(name = "lanche_tarde", nullable = false)
-    private String lanche_tarde;
+    private String lancheTarde;
 
     @Column(name = "jantar", nullable = false)
     private String jantar;
