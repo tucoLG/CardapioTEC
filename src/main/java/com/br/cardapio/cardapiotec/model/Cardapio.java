@@ -5,9 +5,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
+
 
 @Entity
 @Table(name = "cardapio")
@@ -24,7 +26,7 @@ public class Cardapio {
     private String diaSemana;
     
     @ManyToOne // Relacionamento com a entidade Semana
-    @Column(name = "id_semana", nullable = false)
+    @JoinColumn(name = "id_semana", nullable = false)
     private Semana idSemana;
 
     @Column(name = "cafe_manha", nullable = false)
