@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://thymeleaf.org"lang="pt-br">  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"rel="stylesheet"/>
+    <link rel="stylesheet"  type="text/css" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <title>Login</title>
+  </head>
+  <body>
+
+    <main class="container">
+     <div class="title">
+      <h1>CardápioTec</h1>
+     </div> 
+      <form th:action = "@{/login}" method="post">
+        <!-- Coleta dados do usuário(email) -->
+        <div class="input-box">
+          <input placeholder="Email do aluno" type="text" name="email" />
+          <!-- Icones e suas respectivas classes -->
+          <i class="bx bxs-user"></i>
+        </div>
+
+        <!-- Coleta dados do usuário(senha) -->
+        <div class="input-box">
+          <input placeholder="Senha" type="password" name="senha" />
+           <i class="bx bxs-lock-alt"></i>
+        </div>
+
+        <!-- Propriedades de senha -->
+        <div class="options-password">
+          <label>
+            <input type="checkbox" />
+            Lembre a senha
+          </label>
+             <a href="#">Esqueci a senha</a>
+        </div>
+
+        <!-- Botão de login -->
+        <button type="submit" class="login">Entrar</button>
+
+        <p th:if = "${error}" th:text = "${error}" class="error"></p>
+        
+        <!-- Opção de cadastro -->
+        <div class="cadastro">
+          <p>Ainda não possui uma conta? <a href="/cadastrarUsuario">Cadastre-se</a></p>
+          
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

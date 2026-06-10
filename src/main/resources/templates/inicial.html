@@ -1,0 +1,94 @@
+<!doctype html>
+<html xlmns:th = "http://www.thymeleaf.org" lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CardápioTec</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/inicial.css" />
+
+    <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- CONTAINER PRINCIPAL -->
+    <div class="container">
+      <!-- NAVBAR -->
+      <nav class="navbar" role="navigation" aria-label="Menu principal">
+        <!-- LOGO + IMAGEM -->
+        <div class="brand">
+          <h1 class="logo">CardápioTec</h1>
+
+          <div class="logo-etec">
+            <img src="/images/logoEtec.png" alt="Logo da ETEC" />
+          </div>
+        </div>
+
+        <!-- BOTÃO MENU -->
+        <button
+          class="option"
+          id="btnOption"
+          aria-expanded="false"
+          aria-controls="menu"
+          aria-label="Abrir menu"
+        >
+          ☰
+        </button>
+      </nav>
+
+      <!-- CONTEÚDO PRINCIPAL -->
+      <main id="principal" role="main">
+        <!-- TÍTULO -->
+        <section class="cardapio-semanal">
+          <h2>Cardápio Semanal</h2>
+        </section>
+
+        <!-- SELETOR -->
+        <section id="principal">
+          <label for:th="semanas"> Selecione a semana: </label>
+
+          <select id="semanas">
+            <option value="semana1">Semana 1</option>
+
+            <option value="semana2">Semana 2</option>
+
+            <option value="semana3">Semana 3</option>
+
+            <option value="semana4">Semana 4</option>
+          </select>
+        </section>
+
+        <!-- CARDS DO CARDÁPIO -->
+        <section class="cards-container">
+          <!-- ITENS DO CARDÁPIO -->
+          <div class="itens-cardapio" th:each="cardapio : ${listarCardapios}">
+            <h3 th:text = "${cardapio.diaSemana}">Segunda-feira (Teste)</h3>
+            <p th:text = "'Semana: ' + ${cardapio.NumeroSemana}">Itens do cardápio aqui</p>
+            <p th:text = "'Café da manhã: ' + ${cardapio.cafeManha}">Café da manhã</p>
+            <p th:text = "'Almoço: ' + ${cardapio.almoco}">Almoço</p>
+            <p th:text = "'Lanche da tarde: ' + ${cardapio.lancheTarde}">Lanche da tarde</p>
+            <p th:text = "'Jantar: ' + ${cardapio.jantar}">Jantar</p>
+          </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- RODAPÉ -->
+      <footer id="rodape">
+        <p>
+          2026 - Todos os direitos reservados para Luís Guilherme Garcia Fogaça
+          & ETEC Fernandópolis
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

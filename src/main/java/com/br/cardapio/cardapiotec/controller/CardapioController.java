@@ -3,14 +3,16 @@ package com.br.cardapio.cardapiotec.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.br.cardapio.cardapiotec.model.Cardapio;
 import com.br.cardapio.cardapiotec.service.CardapioService;
 
-@RestController
+@Controller
 @RequestMapping("/cardapios")
 public class CardapioController {
 
@@ -27,33 +29,39 @@ public class CardapioController {
             return cardapioService.buscarCardapioPorNumeroSemanaEDiaSemana(numeroSemana, diaSemana);
         }
 
-        @PostMapping("/buscarCardapioPorIdSemana")
+        @PostMapping("/buscarPorIdSemana")
         public Cardapio buscarCardapioPorIdSemana(Long idSemana) {
             return cardapioService.buscarCardapioPorIdSemana(idSemana);
         } 
 
-        @PostMapping("/buscarCardapioPorCafeManha")
+        @PostMapping("/buscarCafeManha")
         public Cardapio buscarCardapioPorCafeManha(String cafeManha) {
             return cardapioService.buscarCardapioPorCafeManha(cafeManha);
         }
 
-        @PostMapping("/buscarCardapioPorAlmoco")
+        @PostMapping("/buscarPorAlmoco")
         public Cardapio buscarCardapioPorAlmoco(String almoco) {
             return cardapioService.buscarCardapioPorAlmoco(almoco);
         }
 
-        @PostMapping("/buscarCardapioPorLancheTarde")
+        @PostMapping("/buscarPorLancheTarde")
         public Cardapio buscarCardapioPorLancheTarde(String lancheTarde) {
             return cardapioService.buscarCardapioPorLancheTarde(lancheTarde);
         }
 
-        @PostMapping("/buscarCardapioPorJantar")
+        @PostMapping("/buscarPorJantar")
         public Cardapio buscarCardapioPorJantar(String jantar) {
             return cardapioService.buscarCardapioPorJantar(jantar);
         }
 
-        @PostMapping("/listarCardapios")
-        public List<Cardapio> listarCardapios() {
-            return cardapioService.listarCardarpios();
+        @GetMapping("/listar")
+        public String exibirCardapios(Model model){
+
+            List<Cardapio> cardapios = cardapioService.listarCardapios();
+
+            model.addAttribute("listarCardapios", cardapios);
+            
+            return "inicial";
         }
+        
 }

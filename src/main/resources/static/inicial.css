@@ -1,0 +1,169 @@
+/* RESET GERAL */ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* CONTAINER PRINCIPAL */
+.container {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAVBAR */
+.navbar {
+    width: 100%;
+    background-color: #ff4040;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Titulo site */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* LOGO ETEC */
+.logo-etec img {
+    width: 200px;
+    height: "10%";
+}
+
+/* OPÇÕES DO MENU */
+.option {
+    border: none;
+    background-color: rgb(255, 255, 255);
+    color: #ff0000;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.option:hover {
+    background-color: #d1d1d1;
+    color: #ca0000;
+}
+
+/* MAIN */
+#cardapio-main {
+    flex: 1;
+    padding: 40px 20px;
+}
+
+/* CArdápio Semanal - title*/
+#cardapio-semanal {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#cardapio-semanal h2 {
+    font-size: 2.5rem;
+    color: #ca0000;
+}
+
+/* SELETOR DE CARDÁPIO */
+
+#principal {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#principal label {
+    font-size: 1.1rem;
+    margin-right: 10px;
+}
+
+#semanas {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+
+/* Container dos Cards */
+.cards-container {
+
+    display: grid;
+    /* 3 cards por linha */
+    grid-template-columns: repeat(3, 280px);
+    /* espaço entre os cards */
+    gap: 20px;
+    /* centraliza horizontalmente */
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.itens-cardapio {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    text-align: center;
+}
+
+/* EFEITO AO PASSAR O MOUSE */
+
+.itens-cardapio:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+    background-color: rgb(207, 207, 207);
+}
+
+/* =========================
+   TÍTULO DOS CARDS
+========================= */
+
+.itens-cardapio h3 {
+    color: #ca0000;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+/* =========================
+   TEXTO DOS CARDS
+========================= */
+
+.itens-cardapio p {
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* =========================
+   RODAPÉ
+========================= */
+
+#rodape {
+    background-color: #ca0000;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}

@@ -12,19 +12,21 @@ public class UsuarioService {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
-    public Usuario cadastrarUsuario (Usuario usuario) {
-        return usuarioRepository.save(usuario);
+    public boolean cadastrarUsuario (String email, String senha) {
+        Usuario usuario = new Usuario();
+        usuario.setEmail(email);
+        usuario.setSenha(senha);
+        return usuarioRepository.save(usuario) != null ;
     }
 
-    public Usuario loginUsuario (String email, String senha){
-       Usuario usuario = usuarioRepository.findByEmail(email);
+    public boolean loginUsuario(String email, String senha) {
+        Usuario usuario = usuarioRepository.findByEmail(email);
 
-       if (usuario != null && usuario.getSenha().equals(senha)) {
-           return usuario;
-       } else {
-           return null; // Retorna null se o login falhar
-       }
+        if (usuario != null) {
+            return true;
+        } else {
+            return false;
+        }
     }
-
     
 }

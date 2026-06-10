@@ -48,7 +48,7 @@ public class CardapioService {
             return cardapioRepository.findByJantar(jantar);
         }
 
-        public List<Cardapio> listarCardarpios() {
+        public List<Cardapio> listarCardapios() {
             return cardapioRepository.findAll();
         }
 }
