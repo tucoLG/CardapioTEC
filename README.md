@@ -200,4 +200,4 @@ Este projeto possui finalidade educacional e acadêmica.
 
 Todos os direitos reservados aos autores do projeto.
 
-© 2026 - Luís Guilherme Garcia Fogaça & Luis Felipe Guedes Soares.
+© 2026 - Luís Guilherme Garcia Fogaça & ETEC Armando José Farinazzo.
