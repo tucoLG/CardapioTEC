@@ -175,7 +175,7 @@ Responsável por:
 
 ### Desenvolvedor Front-End
 
-**Luis Felipe Guedes Soares**
+**Luis Guilherme Garcia Fogaça**
 
 Responsável por:
 
